@@ -82,6 +82,6 @@ const game = () => {
     console.log(calculateWinner())
 }
 
-var computerScore = 0;
-var playerScore = 0;
+var computerScore;
+var playerScore;
 game();
