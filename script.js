@@ -79,7 +79,7 @@ const game = () => {
         console.log(playRound(playerSelection, computerSelection));
     }
 
-    console.log(calculateWinner())
+    console.log(calculateWinner());
 }
 
 var computerScore;
