@@ -11,14 +11,14 @@ const computerPlay = () => {
 }
 
 const playRound = (playerSelection, computerSelection) => {
-    const playerMove = playerSelection.toLowerCase();
+    const playerSelection = playerSelection.toLowerCase();
     let result = "";
 
-    if (playerMove === computerSelection) {
-        result = `Tie. Both players selected ${playerMove}`;
+    if (playerSelection === computerSelection) {
+        result = `Tie. Both players selected ${playerSelection}`;
     } 
     
-    else if (playerMove === "rock") {
+    else if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
             result = "You win. Rock beats scissors.";
         } else {
@@ -26,7 +26,7 @@ const playRound = (playerSelection, computerSelection) => {
         }
     }
     
-    else if (playerMove === "paper") {
+    else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
             result = "You win. Paper beats rock.";
         } else {
@@ -34,7 +34,7 @@ const playRound = (playerSelection, computerSelection) => {
         }
     }
 
-    else if (playerMove === "scissors") {
+    else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
             result = "You win. Scissors beats paper.";
         } else {
@@ -46,9 +46,11 @@ const playRound = (playerSelection, computerSelection) => {
 }
 
 const game = () => {
-
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("rock, paper, or scissors?");
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+game();
