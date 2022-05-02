@@ -52,19 +52,24 @@ const calculateWinner = () => {
   return result;
 };
 
-const game = () => {
-  computerScore = 0;
-  playerScore = 0;
+// const game = () => {
+//   computerScore = 0;
+//   playerScore = 0;
 
-  while (computerScore < 5 && playerScore < 5) {
-    const playerSelection = prompt("rock, paper, or scissors?");
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-  }
+//   while (computerScore < 5 && playerScore < 5) {}
 
-  console.log(calculateWinner());
+//   console.log(calculateWinner());
+// };
+
+var computerScore = 0;
+var playerScore = 0;
+// game();
+
+const play = (e) => {
+  const playerSelection = e.target.textContent;
+  const computerSelection = computerPlay();
+  console.log(playRound(playerSelection, computerSelection));
 };
 
-var computerScore;
-var playerScore;
-game();
+const btns = document.querySelectorAll("button");
+btns.forEach((btn) => btn.addEventListener("click", play));
