@@ -68,18 +68,8 @@ const calculateWinner = () => {
   return result;
 };
 
-// const game = () => {
-//   computerScore = 0;
-//   playerScore = 0;
-
-//   while (computerScore < 5 && playerScore < 5) {}
-
-//   console.log(calculateWinner());
-// };
-
 var computerScore = 0;
 var playerScore = 0;
-// game();
 
 const play = (e) => {
   const playerSelection = e.target.textContent;
