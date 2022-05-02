@@ -40,12 +40,16 @@ const calculateRound = (playerSelection, computerSelection) => {
 };
 
 const playRound = (playerSelection, computerSelection) => {
-  let result = calculateRound(playerSelection, computerSelection);
+  let result = "";
 
-  result =
-    result +
-    ` The score is Player: ${playerScore} to Computer: ${computerScore}.`;
-
+  if (computerScore == 5 || playerScore == 5) {
+    result = calculateWinner();
+  } else {
+    result = calculateRound(playerSelection, computerSelection);
+    result =
+      result +
+      ` The score is Player: ${playerScore} to Computer: ${computerScore}.`;
+  }
   return result;
 };
 
@@ -57,6 +61,9 @@ const calculateWinner = () => {
   } else {
     result = `You won ${playerScore} to ${computerScore}`;
   }
+
+  computerScore = 0;
+  playerScore = 0;
 
   return result;
 };
