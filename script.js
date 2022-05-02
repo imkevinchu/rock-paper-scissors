@@ -37,6 +37,10 @@ const playRound = (playerSelection, computerSelection) => {
     }
   }
 
+  result =
+    result +
+    ` The score is Player: ${playerScore} to Computer: ${computerScore}.`;
+
   return result;
 };
 
@@ -68,7 +72,6 @@ var playerScore = 0;
 const play = (e) => {
   const playerSelection = e.target.textContent;
   const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
   result = playRound(playerSelection, computerSelection);
   document.getElementById("results").textContent = result;
 };
