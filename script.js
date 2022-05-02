@@ -5,7 +5,7 @@ const computerPlay = () => {
   return randomMove;
 };
 
-const playRound = (playerSelection, computerSelection) => {
+const calculateRound = (playerSelection, computerSelection) => {
   playerSelection = playerSelection.toLowerCase();
   let result = "";
 
@@ -36,6 +36,11 @@ const playRound = (playerSelection, computerSelection) => {
       computerScore++;
     }
   }
+  return result;
+};
+
+const playRound = (playerSelection, computerSelection) => {
+  let result = calculateRound(playerSelection, computerSelection);
 
   result =
     result +
