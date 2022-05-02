@@ -69,6 +69,8 @@ const play = (e) => {
   const playerSelection = e.target.textContent;
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
+  result = playRound(playerSelection, computerSelection);
+  document.getElementById("results").textContent = result;
 };
 
 const btns = document.querySelectorAll("button");
