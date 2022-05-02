@@ -43,9 +43,7 @@ const playRound = (playerSelection, computerSelection) => {
 const calculateWinner = () => {
   let result = "";
 
-  if (computerScore === playerScore) {
-    result = `Tied ${computerScore} to ${playerScore}`;
-  } else if (computerScore > playerScore) {
+  if (computerScore > playerScore) {
     result = `Computer won ${computerScore} to ${playerScore}`;
   } else {
     result = `You won ${playerScore} to ${computerScore}`;
@@ -58,7 +56,7 @@ const game = () => {
   computerScore = 0;
   playerScore = 0;
 
-  for (let i = 0; i < 5; i++) {
+  while (computerScore < 5 || playerScore < 5) {
     const playerSelection = prompt("rock, paper, or scissors?");
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
