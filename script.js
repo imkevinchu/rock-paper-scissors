@@ -56,7 +56,7 @@ const game = () => {
   computerScore = 0;
   playerScore = 0;
 
-  while (computerScore < 5 || playerScore < 5) {
+  while (computerScore < 5 && playerScore < 5) {
     const playerSelection = prompt("rock, paper, or scissors?");
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
